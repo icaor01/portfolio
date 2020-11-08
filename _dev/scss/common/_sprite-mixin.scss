@@ -1,0 +1,50 @@
+///*
+//The `sprites` mixin generates identical output to the CSS template
+//  but can be overridden inside of SCSS
+//
+//@include sprites($spritesheet-sprites);
+//*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+@mixin sprite-01($sprite-01) {
+@include sprite-position($sprite-01);
+@include sprite-width($sprite-01);
+@include sprite-height($sprite-01);
+}
+
+@mixin sprite-width-half($sprite-half) {
+width: nth($sprite-half, 5) / 2;
+}
+
+@mixin sprite-height-half($sprite-half) {
+height: nth($sprite-half, 6) / 2;
+}
+
+@mixin sprite-position-half($sprite-half) {
+$sprite-offset-x: nth($sprite-half, 3) / 2;
+$sprite-offset-y: nth($sprite-half, 4) / 2;
+background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-size-half($sprite-half) {
+  background-size: nth($sprite-half, 7) / 2 nth($sprite-half, 8) / 2;
+}
+@mixin sprite-image-half($sprite-half) {
+  $sprite-image: nth($sprite-half, 9);
+  background-image: url(#{$sprite-image});
+}
+
+
+@mixin sprite-half($sprite-half) {
+@include sprite-image($sprite-half);
+@include sprite-position-half($sprite-half);
+@include sprite-width-half($sprite-half);
+@include sprite-height-half($sprite-half);
+@include sprite-size-half($sprite-half);
+}

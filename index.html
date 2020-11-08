@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="noindex , nofollow" />
+<link rel="stylesheet" href="./css/master.css">
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script src="./js/common.js"></script>
+<script src="https://sdk.form.run/js/v2/formrun.js"></script>
+<script src="https://kit.fontawesome.com/740b397812.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="header">
+      <h1 class="header__title">Portfolio</h1>
+  </header>
+
+  <main class="main">
+  <div class="container">
+    <section id="sec-home" class="home">
+      <div class="home__profile">
+        <h2 class="home__title">HTML Coder / PHP Engineer / Writer</h2>
+        <h3 class="home__name">Kazuki Akiba</h3>
+        <p class="home__skills">
+                    CODING - HTML5, CSS, PHP, JavaScript <br>
+                    GRAPHICS - PHOTOSHOP, CLIP STUDIO PAINT <br>
+                    WRITING - CONTENTS WRITING, SEO WRITING, COLUMN, REVIEW <br>
+                    CMS - WORDPRESS
+        </p>
+      </div>
+    </section>
+    <section id="sec-about" class="about">
+      <h2 class="about__title section-title">ABOUT</h2>
+      <div class="about__text">
+        <p>
+          ソフトウェア会社のWEB部門を中心にHTMLコーダー、PHPエンジニアとして7年間働いていました。
+        </p>
+      </div>
+      <div class="about__text">
+        <p>
+          一度WEB制作から離れ、フリーランスとしてWEBライティング業を2年間経験。<br>
+          改めてHTMLコーディングやフロントエンド制作に携わりたいと考えています。
+        </p>
+      </div>
+    </section>
+    <section id="sec-works" class="works">
+      <h2 class="works__title section-title">WORKS</h2>
+      <ul class="works__list">
+        <li>
+          <h3 class="works__list-title">株式会社〇〇様<br>コーポレートサイト</h3>
+          <img src="./images/works01.jpg" alt="works01">
+          <p class="works__list-text">テキストテキストテキスト</p>
+        </li>
+        <li>
+          <h3 class="works__list-title">○○サービス<br>ランディングページ</h3>
+          <img src="./images/works02.jpg" alt="works02">
+          <p class="works__list-text">テキストテキストテキスト</p>
+        </li>
+        <li>
+          <h3 class="works__list-title">株式会社〇〇様<br>ランディングページ</h3>
+          <img src="./images/works03.jpg" alt="works03">
+          <p class="works__list-text">テキストテキストテキスト</p>
+        </li>
+      </ul>
+    </section>
+    <section id="sec-skills" class="skills">
+      <h2 class="skills__title section-title">SKILLS</h2>
+      <div class="skills__box">
+        <div class="skills__item">
+          <h3 class="skills__item-title skills__item-title--coding">CODING</h3>
+          <p>HTML5, CSS, PHP, JavaScriptで <br>
+            コーディングができます。</p>
+        </div>
+        <div class="skills__item">
+          <h3 class="skills__item-title skills__item-title--graphics">GRAPHICS</h3>
+          <p>PHOTOSHOP, CLIP STUDIO PAINTで <br>
+            画像編集、イラスト作成ができます。</p>
+        </div>
+        <div class="skills__item last">
+          <h3 class="skills__item-title skills__item-title--writing">WRITING</h3>
+          <p>WEBコンテンツライティング、 <br>
+            SEOライティングが <br>
+            できます。</p>
+        </div>
+      </div>
+    </section>
+    <section id="sec-contact" class="contact">
+      <h2 class="contact__title section-title">CONTACT</h2>
+      <form class="contact__formrun" action="#" method="post">
+        <div class="contact__box">
+          <label>お名前</label>
+          <input name="お名前" type="text">
+        </div>
+
+        <div class="contact__box">
+          <label>メールアドレス [必須]</label>
+          <input name="メールアドレス" type="email" data-formrun-type="email" data-formrun-required>
+          <div data-formrun-show-if-error="メールアドレス" class="contact__alert">メールアドレスを正しく入力してください</div>
+        </div>
+
+        <div class="contact__box">
+          <label>お問い合わせ [必須]</label>
+          <textarea name="お問い合わせ"  rows="6" cols="40" data-formrun-required></textarea>
+          <div data-formrun-show-if-error="お問い合わせ" class="contact__alert">お問い合わせ入力してください</div>
+        </div>
+
+        <div class="contact__box">
+          <label>個人情報利用同意 [必須]</label>
+          <input type="checkbox" name="個人情報利用同意" data-formrun-required>
+          <div data-formrun-show-if-error="個人情報利用同意" class="contact__alert">同意してください</div>
+        </div>
+
+        <!-- ボット投稿をブロックするためのタグ -->
+        <div class="_formrun_gotcha">
+          <style media="screen">._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}</style>
+          <label for="_formrun_gotcha">If you are a human, ignore this field</label>
+          <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
+        </div>
+
+        <button class="contact__submit contact__alert" type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+      </form>
+
+    </section>
+  </div>
+  <div class="js-page-top">
+    　　<a href="#">↑ TOP</a>
+   </div>
+</main>
+<footer class="footer">
+   <small>Copyright © portfolio All Rights Reserved.</small>
+</footer>
+</body>
+</html>
